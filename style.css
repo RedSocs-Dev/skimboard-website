@@ -1,0 +1,41 @@
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.menu > li {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.menu li a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.sous-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 200px;
+}
+
+
+.sous-menu li a {
+    display: block;
+    padding-bottom: 15px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.menu li:hover .sous-menu {
+    display: block;
+}   
