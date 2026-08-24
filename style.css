@@ -1,41 +1,95 @@
-.menu {
-    display: flex;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     list-style: none;
-    gap: 30px;
-    font-size: 18px;
-    justify-content: center;
 }
 
-.menu > li {
+a {
+    text-decoration: none;
+    color: black;
+    list-style: none;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+    background: #fdf5d0;
+    list-style: none;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    list-style: none;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 17px;
+}
+
+.menu li {
     position: relative;
-    padding-bottom: 15px;
+    text-decoration: none;
 }
 
 .menu li a {
-    margin-right: 20px;
-    text-decoration: none;
     color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    font-family: 'Oswald', sans-serif;
+    transition: background-color 0.4s ease;
+}
+
+.dropdown {
+    position: relative;
 }
 
 .sous-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
     list-style: none;
-    margin: 0;
     padding: 0;
-    min-width: 200px;
+    margin-top: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
 }
-
 
 .sous-menu li a {
     display: block;
-    padding-bottom: 15px;
-    color: rgb(0, 0, 0);
+    padding: 4px 15px;
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    transition: background-color 0.4s ease;
+}
+
+.dropdown:hover .sous-menu {
+    max-height: 200px;
+}
+
+.menu-droite li a {
+    font-size: 18px;
+    color: #000000;
+    list-style: none;
+    position: relative;
+}
+
+.menu-droite li {
+    position: relative;
     text-decoration: none;
 }
 
-.menu li:hover .sous-menu {
-    display: block;
-}   
+.logo li a {
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    color: #000000;
+    list-style: none;
+    position: relative;
+}
