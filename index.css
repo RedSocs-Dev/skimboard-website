@@ -113,6 +113,9 @@
 	background: #174653;
 	border-radius: 18px;
 	color: #ffffff;
+	width: auto;
+	max-width: 100%;
+	overflow-wrap: anywhere;
 	opacity: 0;
 	transform: translateY(28px);
 	transition: opacity 0.7s ease, transform 0.7s ease;
@@ -239,8 +242,8 @@
 
 
 @media (prefers-reduced-motion: reduce) {
-	.title-letter,
-	.home-supporting-text,
+	.hero-title-visible .title-letter,
+	.hero-title-visible .home-supporting-text,
 	.home-section {
 		opacity: 1;
 		transform: none;
@@ -249,7 +252,7 @@
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	.home-hero {
 		display: block;
 		min-height: 0;
