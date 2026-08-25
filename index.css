@@ -324,4 +324,27 @@
 		margin-left: 0;
 		margin-right: 0;
 	}
+
+	.home-hero {
+		padding: 26px 12px 42px;
+	}
+
+	.home-copy {
+		margin-top: 24px;
+		padding-left: 13px;
+	}
+
+	.home-copy h1 {
+		font-size: clamp(34px, 10vw, 42px);
+	}
+
+	.home-section {
+		margin-left: 12px;
+		margin-right: 12px;
+		padding: 34px 18px 38px;
+	}
+
+	.home-section h2 {
+		font-size: clamp(25px, 7vw, 32px);
+	}
 }
