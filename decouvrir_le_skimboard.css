@@ -594,6 +594,14 @@ main {
         object-position: center 90%;
     }
 
+    .planche-image {
+        object-fit: contain;
+        object-position: center center;
+        background: #dfe9e7;
+        transform: scale(1.8) translateY(12%);
+        transform-origin: center center;
+    }
+
     .discover-copy {
         position: relative;
         display: block;
