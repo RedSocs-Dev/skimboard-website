@@ -30,3 +30,26 @@ if (heroTitle && homeCopy) {
 
     titleObserver.observe(homeCopy);
 }
+
+document.querySelectorAll(".page-title-animated").forEach((title) => {
+    const titleText = title.textContent;
+    let letterIndex = 0;
+
+    title.setAttribute("aria-label", titleText);
+    title.textContent = "";
+
+    Array.from(titleText).forEach((character) => {
+        if (character === " ") {
+            title.append(" ");
+            return;
+        }
+
+        const letter = document.createElement("span");
+        letter.className = "title-letter";
+        letter.textContent = character;
+        letter.setAttribute("aria-hidden", "true");
+        letter.style.animationDelay = `${letterIndex * 0.05}s`;
+        title.append(letter);
+        letterIndex += 1;
+    });
+});
