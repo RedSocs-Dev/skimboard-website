@@ -447,6 +447,11 @@ main {
     animation: title-wave 0.75s cubic-bezier(0.22, 0.8, 0.3, 1) forwards;
 }
 
+.page-title-animated .title-word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 @keyframes title-wave {
     0% {
         opacity: 0;
@@ -694,5 +699,21 @@ main {
 
     .board-card-image {
         height: 260px;
+    }
+}
+
+@media (min-width: 769px) and (max-height: 850px) {
+    .discover-hero {
+        min-height: calc(100vh - 94px);
+        padding-top: 36px;
+        padding-bottom: 58px;
+    }
+
+    .discover-image-frame {
+        width: min(38vw, 540px);
+    }
+
+    .discover-copy {
+        align-self: center;
     }
 }

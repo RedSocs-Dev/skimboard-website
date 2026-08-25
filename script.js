@@ -38,18 +38,40 @@ document.querySelectorAll(".page-title-animated").forEach((title) => {
     title.setAttribute("aria-label", titleText);
     title.textContent = "";
 
-    Array.from(titleText).forEach((character) => {
-        if (character === " ") {
-            title.append(" ");
+    titleText.split(/(\s+)/).forEach((part) => {
+        if (/\s+/.test(part)) {
+            title.append(part);
             return;
         }
 
-        const letter = document.createElement("span");
-        letter.className = "title-letter";
-        letter.textContent = character;
-        letter.setAttribute("aria-hidden", "true");
-        letter.style.animationDelay = `${letterIndex * 0.05}s`;
-        title.append(letter);
-        letterIndex += 1;
+        const word = document.createElement("span");
+        word.className = "title-word";
+        word.setAttribute("aria-hidden", "true");
+
+        Array.from(part).forEach((character) => {
+            const letter = document.createElement("span");
+            letter.className = "title-letter";
+            letter.textContent = character;
+            letter.style.animationDelay = `${letterIndex * 0.05}s`;
+            word.append(letter);
+            letterIndex += 1;
+        });
+
+        title.append(word);
     });
 });
+
+const homeSections = document.querySelectorAll(".home-section");
+
+if (homeSections.length) {
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.18 });
+
+    homeSections.forEach((section) => sectionObserver.observe(section));
+}

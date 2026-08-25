@@ -113,6 +113,14 @@
 	background: #174653;
 	border-radius: 18px;
 	color: #ffffff;
+	opacity: 0;
+	transform: translateY(28px);
+	transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.home-section.is-visible {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .home-section-light {
@@ -232,10 +240,12 @@
 
 @media (prefers-reduced-motion: reduce) {
 	.title-letter,
-	.home-supporting-text {
+	.home-supporting-text,
+	.home-section {
 		opacity: 1;
 		transform: none;
 		animation: none;
+		transition: none;
 	}
 }
 
