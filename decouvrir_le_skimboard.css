@@ -529,10 +529,241 @@ main {
     font-size: clamp(30px, 3vw, 44px);
 }
 
+.guide-section {
+    margin: 0 clamp(28px, 9vw, 140px) 90px;
+    padding: 64px clamp(28px, 7vw, 90px);
+    background: #ffffff;
+    border: 1px solid #e1ddd4;
+    border-top: 6px solid #d8a24a;
+    border-radius: 18px;
+}
+
+.guide-intro {
+    max-width: 780px;
+}
+
+.guide-intro h2 {
+    margin-bottom: 16px;
+    color: #174653;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(30px, 3vw, 44px);
+    line-height: 1;
+}
+
+.guide-intro > p:last-child {
+    color: #4a4a4a;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 34px;
+}
+
+.guide-card {
+    padding: 24px;
+    background: #f5f3ee;
+    border-left: 4px solid #174653;
+}
+
+.guide-card-featured {
+    border-left-color: #d8a24a;
+}
+
+.guide-card h3 {
+    margin-bottom: 10px;
+    color: #174653;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+}
+
+.guide-card-tag {
+    margin-bottom: 10px;
+    color: #8f6d38 !important;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.guide-card p {
+    color: #4a4a4a;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.guide-card strong {
+    display: block;
+    margin-top: 18px;
+    color: #8f6d38;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+}
+
+.guide-source {
+    margin-top: 24px;
+    color: #6b6b6b;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.guide-source a {
+    color: #174653;
+    text-decoration: underline;
+}
+
+.spot-content,
+.mapbox-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+    align-items: center;
+    gap: clamp(28px, 6vw, 90px);
+    margin: 0 clamp(28px, 9vw, 140px) 32px;
+    padding: 64px clamp(28px, 7vw, 90px);
+    background: #174653;
+    border-radius: 18px;
+    color: #ffffff;
+}
+
+.spot-content h2,
+.mapbox-section h2 {
+    margin-bottom: 16px;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(30px, 3vw, 44px);
+    line-height: 1;
+}
+
+.spot-content > div:first-child > p:last-child,
+.mapbox-section > div:first-child > p:last-child {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+.spot-content .home-section-kicker,
+.mapbox-section .home-section-kicker {
+    margin-bottom: 10px;
+}
+
+.spot-highlights {
+    padding: 26px;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #d8a24a;
+}
+
+.spot-highlights h3 {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+}
+
+.spot-highlights p {
+    color: #dcebed;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.spot-advice {
+    margin-top: 12px;
+    color: #f0c778 !important;
+}
+
+.mapbox-section {
+    background: #ffffff;
+    border: 1px solid #e1ddd4;
+    color: #111111;
+}
+
+.mapbox-placeholder {
+    display: grid;
+    place-items: center;
+    gap: 10px;
+    min-height: 260px;
+    padding: 30px;
+    background: #dfe9e7;
+    border: 2px dashed #8f6d38;
+    border-radius: 12px;
+    color: #174653;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+
+.mapbox-placeholder i {
+    color: #d8a24a;
+    font-size: 38px;
+}
+
 .boards-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
+}
+
+.boards-carousel {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr) 48px;
+    align-items: center;
+    gap: 18px;
+}
+
+.boards-carousel .boards-grid {
+    display: block;
+    min-width: 0;
+}
+
+.boards-carousel .board-card {
+    display: none;
+}
+
+.boards-carousel .board-card.is-carousel-active {
+    display: block;
+    animation: board-slide-in 0.35s ease both;
+}
+
+.carousel-button {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #d8a24a;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #174653;
+    cursor: pointer;
+    font-size: 17px;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.carousel-button:hover,
+.carousel-button:focus-visible {
+    background: #d8a24a;
+    color: #111111;
+    transform: scale(1.08);
+}
+
+.carousel-button:focus-visible {
+    outline: 3px solid #174653;
+    outline-offset: 3px;
+}
+
+@keyframes board-slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .board-card {
@@ -586,6 +817,14 @@ main {
     font-family: 'Oswald', sans-serif;
     font-size: 15px;
     text-transform: uppercase;
+}
+
+.board-card-info .product-price {
+    margin-top: 12px;
+    color: #174653;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: none;
 }
 
 .board-details {
@@ -679,6 +918,14 @@ main {
     line-height: 1;
 }
 
+.board-details-price {
+    margin-top: 16px;
+    color: #8f6d38;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
 .board-details-description {
     max-width: 760px;
     margin-top: 24px;
@@ -739,9 +986,47 @@ main {
         margin: 0 18px 58px;
     }
 
+    .guide-section {
+        margin: 0 18px 58px;
+        padding: 40px 22px 44px;
+        border-radius: 14px;
+    }
+
+    .guide-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 26px;
+    }
+
+    .spot-content,
+    .mapbox-section {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 28px;
+        margin: 0 18px 22px;
+        padding: 40px 22px 44px;
+        border-radius: 14px;
+    }
+
+    .mapbox-placeholder {
+        min-height: 200px;
+    }
+
     .boards-grid {
         grid-template-columns: 1fr;
         gap: 18px;
+    }
+
+    .boards-carousel {
+        grid-template-columns: 38px minmax(0, 1fr) 38px;
+        gap: 8px;
+    }
+
+    .carousel-button {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
     }
 
     .board-card-image {

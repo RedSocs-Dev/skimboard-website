@@ -80,6 +80,7 @@ const boardDetails = document.querySelector("#board-details");
 const boardDetailsTitle = document.querySelector("#board-details-title");
 const boardDetailsBrand = document.querySelector("#board-details-brand");
 const boardDetailsDescription = document.querySelector("#board-details-description");
+const boardDetailsPrice = document.querySelector("#board-details-price");
 const boardDetailsImage = document.querySelector("#board-details-image");
 const boardDetailsClose = document.querySelector(".board-details-close");
 const boardDetailsBackdrop = document.querySelector(".board-details-backdrop");
@@ -109,6 +110,7 @@ const openBoardDetails = (card) => {
     boardDetailsImage.alt = cardImage.alt;
     boardDetailsTitle.textContent = card.querySelector("h3").textContent;
     boardDetailsBrand.textContent = card.querySelector(".board-card-info p").textContent;
+    boardDetailsPrice.textContent = card.dataset.price || "";
     boardDetailsDescription.textContent = card.dataset.description;
     card.setAttribute("aria-expanded", "true");
     boardDetails.classList.add("is-open");
@@ -124,6 +126,24 @@ document.querySelectorAll(".board-card").forEach((card) => {
             openBoardDetails(card);
         }
     });
+});
+
+document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+    const cards = Array.from(carousel.querySelectorAll(".board-card"));
+    const previousButton = carousel.querySelector(".carousel-button-previous");
+    const nextButton = carousel.querySelector(".carousel-button-next");
+    let activeIndex = 0;
+
+    const showCard = (index) => {
+        activeIndex = (index + cards.length) % cards.length;
+        cards.forEach((card, cardIndex) => {
+            card.classList.toggle("is-carousel-active", cardIndex === activeIndex);
+        });
+    };
+
+    previousButton?.addEventListener("click", () => showCard(activeIndex - 1));
+    nextButton?.addEventListener("click", () => showCard(activeIndex + 1));
+    showCard(activeIndex);
 });
 
 boardDetailsClose?.addEventListener("click", closeBoardDetails);

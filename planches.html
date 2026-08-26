@@ -3,9 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Choisissez la planche de skimboard adaptée à votre niveau grâce à notre guide : tailles, matériaux, formes et conseils pour bien débuter ou performer.">
 	<link rel="stylesheet" href="decouvrir_le_skimboard.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-	<title>Planches | Blue Glide</title>
+	<title>Quelle planche de skimboard choisir ? Guide complet</title>
 </head>
 <body>
 
@@ -26,7 +27,7 @@
 			<ul class="sous-menu">
 				<li><a href="spot-en-france.html">France</a></li>
 				<li><a href="spot-a-bali.html">Bali</a></li>
-				<li><a href="spot-a-hawai.html">Hawaï</a></li>
+				<li><a href="spot-au-Etats-Unis.html">États-Unis</a></li>
 			</ul>
 		</li>
 		<li><a href="planches.html">Planches</a></li>
@@ -43,7 +44,7 @@
 <main>
 	<section class="hero discover-hero" aria-labelledby="hero-title">
 		<div class="discover-image-frame">
-			<img src="images/planche-1.jpg" alt="Planche de skimboard" class="image discover-image planche-image">
+			<img src="images/planche-1.jpg" alt="Planche de skimboard pour pratiquer sur la plage" class="image discover-image planche-image">
 		</div>
 		<div class="hero-copy discover-copy planche-copy">
 			<p class="hero-kicker">Équipement</p>
@@ -54,36 +55,77 @@
 
 	<section class="boards-section" aria-labelledby="boards-title">
 		<h2 id="boards-title">Notre sélection</h2>
-		<div class="boards-grid">
-			<article class="board-card" tabindex="0" role="button" aria-expanded="false" data-description="Une planche en résine parfaite pour débuter ! Avec son nose un peu relevé, elle est idéale pour faire la transition entre le sable et l'eau.">
+		<div class="boards-carousel" data-carousel>
+			<button class="carousel-button carousel-button-previous" type="button" aria-label="Planche précédente">
+				<i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+			</button>
+			<div class="boards-grid">
+			<article class="board-card" tabindex="0" role="button" aria-expanded="false" data-price="Prix indicatif : 79,99 €" data-description="Une planche en résine parfaite pour débuter ! Avec son nose un peu relevé, elle est idéale pour faire la transition entre le sable et l'eau.">
 				<img src="images/planche-2.JPEG" alt="Planche de skimboard bleue Radbug" class="board-card-image">
 				<div class="board-card-info">
 					<h3>Victoria Foamie</h3>
 					<p>Victoria Skimboards</p>
+					<p class="product-price">Prix indicatif : 79,99 €</p>
 				</div>
 			</article>
-			<article class="board-card" tabindex="0" role="button" aria-expanded="false" data-description="Une planche en mousse de 103 cm qui flotte mieux et qui est plus stable, pratique pour apprendre les bases du skimboard !">
+			<article class="board-card" tabindex="0" role="button" aria-expanded="false" data-price="Prix indicatif : 34,99 €" data-description="Une planche en mousse de 103 cm qui flotte mieux et qui est plus stable, pratique pour apprendre les bases du skimboard !">
 				<img src="images/planche-3.JPEG" alt="Planche de skimboard naturelle Radbug" class="board-card-image">
 				<div class="board-card-info">
 					<h3>Radbug 103</h3>
 					<p>Decathlon</p>
+					<p class="product-price">Prix indicatif : 34,99 €</p>
 				</div>
 			</article>
-			<article class="board-card" tabindex="0" role="button" aria-expanded="false" data-description="Une belle planche en bois, pratique et agréable, avec un très bon rapport qualité-prix.">
+			<article class="board-card" tabindex="0" role="button" aria-expanded="false" data-price="Prix indicatif : 34,99 €" data-description="Une belle planche en bois, pratique et agréable, avec un très bon rapport qualité-prix.">
 				<img src="images/planche-4.JPEG" alt="Planche de skimboard Radbug" class="board-card-image">
 				<div class="board-card-info">
 					<h3>Radbug Wave Wooden Skimboard 103 cm</h3>
 					<p>Decathlon</p>
+					<p class="product-price">Prix indicatif : 34,99 €</p>
 				</div>
 			</article>
-			<article class="board-card" tabindex="0" role="button" aria-expanded="false" data-description="Une magnifique planche, plus orientée vers la pratique professionnelle, avec un beau rouge et un design qui attire l'œil. Un bon compromis grâce à sa résine époxy, qui permet à la planche de flotter sans être trop légère.">
+			<article class="board-card" tabindex="0" role="button" aria-expanded="false" data-price="Prix indicatif : 149,00 €" data-description="Une magnifique planche, plus orientée vers la pratique professionnelle, avec un beau rouge et un design qui attire l'œil. Un bon compromis grâce à sa résine époxy, qui permet à la planche de flotter sans être trop légère.">
 				<img src="images/planche-5.JPG" alt="Planche de skimboard rouge Radbug" class="board-card-image">
 				<div class="board-card-info">
 					<h3>Eden 115 Rouge</h3>
 					<p>Eden</p>
+					<p class="product-price">Prix indicatif : 149,00 €</p>
 				</div>
 			</article>
+			</div>
+			<button class="carousel-button carousel-button-next" type="button" aria-label="Planche suivante">
+				<i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+			</button>
 		</div>
+	</section>
+
+	<section class="guide-section" aria-labelledby="materials-title">
+		<div class="guide-intro">
+			<p class="home-section-kicker">Guide d'achat</p>
+			<h2 id="materials-title">Quelle planche de skimboard choisir ?</h2>
+			<p>Le meilleur choix dépend de ton niveau, de ton poids et du terrain sur lequel tu veux pratiquer. Commence par privilégier la stabilité et la solidité, puis passe à une planche plus technique lorsque tu maîtrises les bases.</p>
+		</div>
+		<div class="guide-grid">
+			<article class="guide-card">
+				<h3>Bois</h3>
+				<p class="guide-card-tag">Meilleur choix pour débuter</p>
+				<p>Stable, solide et accessible, le bois est recommandé pour apprendre sur le sable humide et s'entraîner aux premiers départs.</p>
+				<strong>Budget indicatif : 25 à 50 €</strong>
+			</article>
+			<article class="guide-card guide-card-featured">
+				<h3>Mousse</h3>
+				<p class="guide-card-tag">Meilleur choix pour le confort</p>
+				<p>Plus flottante et plus tolérante, la mousse convient aux débutants et aux pratiquants qui recherchent davantage de confort.</p>
+				<strong>Budget indicatif : 70 à 100 €</strong>
+			</article>
+			<article class="guide-card">
+				<h3>Fibre et époxy</h3>
+				<p class="guide-card-tag">Meilleur choix pour progresser</p>
+				<p>Légère et réactive, cette construction s'adresse aux pratiquants confirmés qui veulent évoluer dans les vagues.</p>
+				<strong>Budget indicatif : 100 à 250 €</strong>
+			</article>
+		</div>
+		<p class="guide-source">Prix indicatifs relevés le 26 août 2026. À titre de repère, Decathlon affichait une planche bois adulte à 34,99 € et une planche mousse adulte à 79,99 €. Les prix peuvent changer selon le stock et le vendeur. <a href="https://www.decathlon.fr/search?Ntt=skimboard%20radbug" target="_blank" rel="noopener">Voir les prix en ligne</a></p>
 	</section>
 </main>
 
@@ -96,6 +138,7 @@
 		<img class="board-details-image" id="board-details-image" src="" alt="">
 		<p class="board-details-brand" id="board-details-brand"></p>
 		<h2 id="board-details-title"></h2>
+		<p class="board-details-price" id="board-details-price"></p>
 		<p class="board-details-description" id="board-details-description"></p>
 	</section>
 </div>
