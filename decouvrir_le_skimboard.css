@@ -428,7 +428,7 @@ main {
     grid-column: 1;
     grid-row: 1;
     align-self: end;
-    max-width: 570px;
+    max-width: 500px;
     padding: 0 0 0 22px;
     background: transparent;
     border-left: 4px solid #d8a24a;
@@ -441,16 +441,11 @@ main {
 }
 
 .discover-copy h1 {
-    max-width: 510px;
-    font-size: clamp(42px, 5vw, 70px);
+    max-width: 480px;
 }
 
 .discover-copy .hero-text {
     max-width: 360px;
-}
-
-.planche-copy {
-    transform: translateY(-100px);
 }
 
 .page-title-animated .title-letter {
@@ -540,11 +535,17 @@ main {
     border-radius: 14px;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .board-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 16px 30px rgba(0, 0, 0, 0.14);
+}
+
+.board-card:focus-visible {
+    outline: 3px solid #d8a24a;
+    outline-offset: 4px;
 }
 
 .board-card-image {
@@ -576,6 +577,106 @@ main {
     text-transform: uppercase;
 }
 
+.board-details {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.board-details.is-open {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.board-details-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 17, 17, 0.42);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.board-details-panel {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 75vh;
+    padding: clamp(36px, 6vw, 84px) clamp(28px, 9vw, 140px);
+    background: #ffffff;
+    border-top: 6px solid #d8a24a;
+    box-shadow: 0 -16px 36px rgba(0, 0, 0, 0.18);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transform: translateY(100%);
+    transition: transform 0.45s cubic-bezier(0.22, 0.8, 0.3, 1);
+}
+
+.board-details.is-open .board-details-backdrop {
+    opacity: 1;
+}
+
+.board-details.is-open .board-details-panel {
+    transform: translateY(0);
+}
+
+.board-details-close {
+    position: absolute;
+    top: 24px;
+    right: clamp(28px, 9vw, 140px);
+    width: 42px;
+    height: 42px;
+    border: 1px solid #d8a24a;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #174653;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.board-details-close:focus-visible {
+    outline: 3px solid #d8a24a;
+    outline-offset: 3px;
+}
+
+.board-details-image {
+    display: block;
+    width: min(100%, 360px);
+    height: 220px;
+    margin-bottom: 24px;
+    object-fit: contain;
+    background: #f5f3ee;
+    mix-blend-mode: multiply;
+}
+
+.board-details-brand {
+    margin-bottom: 10px;
+    color: #8f6d38;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.board-details-panel h2 {
+    max-width: 760px;
+    color: #174653;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(34px, 5vw, 64px);
+    line-height: 1;
+}
+
+.board-details-description {
+    max-width: 760px;
+    margin-top: 24px;
+    color: #4a4a4a;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(18px, 2vw, 24px);
+    line-height: 1.5;
+}
+
 @media (max-width: 900px) {
     .discover-hero {
         display: block;
@@ -595,11 +696,7 @@ main {
     }
 
     .planche-image {
-        object-fit: contain;
-        object-position: center center;
-        background: #dfe9e7;
-        transform: scale(1.8) translateY(12%);
-        transform-origin: center center;
+        object-position: 78% center;
     }
 
     .discover-copy {
@@ -613,11 +710,8 @@ main {
         padding-left: 16px;
     }
 
-    .planche-copy {
-        transform: none;
-    }
-
     .discover-copy h1 {
+        max-width: 480px;
         font-size: clamp(38px, 11vw, 52px);
     }
 
@@ -641,6 +735,22 @@ main {
 
     .board-card-image {
         height: 300px;
+    }
+
+    .board-details-panel {
+        height: 75vh;
+        padding: 72px 22px 36px;
+    }
+
+    .board-details-image {
+        width: 100%;
+        height: 190px;
+        margin-bottom: 20px;
+    }
+
+    .board-details-close {
+        top: 18px;
+        right: 22px;
     }
 
     .paragraphe-titre {
@@ -693,7 +803,7 @@ main {
     }
 
     .discover-image-frame {
-        width: min(86vw, 320px);
+        width: min(88vw, 330px);
     }
 
     .discover-copy {
@@ -720,22 +830,6 @@ main {
 
     .board-card-image {
         height: 260px;
-    }
-}
-
-@media (min-width: 901px) and (max-height: 850px) {
-    .discover-hero {
-        min-height: calc(100vh - 94px);
-        padding-top: 36px;
-        padding-bottom: 58px;
-    }
-
-    .discover-image-frame {
-        width: min(38vw, 540px);
-    }
-
-    .discover-copy {
-        align-self: center;
     }
 }
 

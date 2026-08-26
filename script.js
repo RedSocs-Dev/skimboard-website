@@ -75,3 +75,61 @@ if (homeSections.length) {
 
     homeSections.forEach((section) => sectionObserver.observe(section));
 }
+
+const boardDetails = document.querySelector("#board-details");
+const boardDetailsTitle = document.querySelector("#board-details-title");
+const boardDetailsBrand = document.querySelector("#board-details-brand");
+const boardDetailsDescription = document.querySelector("#board-details-description");
+const boardDetailsImage = document.querySelector("#board-details-image");
+const boardDetailsClose = document.querySelector(".board-details-close");
+const boardDetailsBackdrop = document.querySelector(".board-details-backdrop");
+let selectedBoard = null;
+
+const closeBoardDetails = () => {
+    if (!boardDetails) {
+        return;
+    }
+
+    boardDetails.classList.remove("is-open");
+    boardDetails.setAttribute("aria-hidden", "true");
+    selectedBoard?.setAttribute("aria-expanded", "false");
+    selectedBoard?.focus();
+    selectedBoard = null;
+};
+
+const openBoardDetails = (card) => {
+    if (!boardDetails) {
+        return;
+    }
+
+    selectedBoard?.setAttribute("aria-expanded", "false");
+    selectedBoard = card;
+    const cardImage = card.querySelector(".board-card-image");
+    boardDetailsImage.src = cardImage.src;
+    boardDetailsImage.alt = cardImage.alt;
+    boardDetailsTitle.textContent = card.querySelector("h3").textContent;
+    boardDetailsBrand.textContent = card.querySelector(".board-card-info p").textContent;
+    boardDetailsDescription.textContent = card.dataset.description;
+    card.setAttribute("aria-expanded", "true");
+    boardDetails.classList.add("is-open");
+    boardDetails.setAttribute("aria-hidden", "false");
+    boardDetailsClose.focus();
+};
+
+document.querySelectorAll(".board-card").forEach((card) => {
+    card.addEventListener("click", () => openBoardDetails(card));
+    card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openBoardDetails(card);
+        }
+    });
+});
+
+boardDetailsClose?.addEventListener("click", closeBoardDetails);
+boardDetailsBackdrop?.addEventListener("click", closeBoardDetails);
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && boardDetails?.classList.contains("is-open")) {
+        closeBoardDetails();
+    }
+});

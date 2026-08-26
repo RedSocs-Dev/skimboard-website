@@ -55,28 +55,28 @@
 	<section class="boards-section" aria-labelledby="boards-title">
 		<h2 id="boards-title">Notre sélection</h2>
 		<div class="boards-grid">
-			<article class="board-card">
+			<article class="board-card" tabindex="0" role="button" aria-expanded="false" data-description="Une planche en mousse stable et confortable, idéale pour débuter et progresser sur le sable humide.">
 				<img src="images/planche-2.JPEG" alt="Planche de skimboard bleue Radbug" class="board-card-image">
 				<div class="board-card-info">
 					<h3>Victoria Foamie</h3>
 					<p>Victoria Skimboards</p>
 				</div>
 			</article>
-			<article class="board-card">
+			<article class="board-card" tabindex="0" role="button" aria-expanded="false" data-description="Une planche en bois de 103 cm, pratique pour apprendre les bases du skimboard sur une plage plate.">
 				<img src="images/planche-3.JPEG" alt="Planche de skimboard naturelle Radbug" class="board-card-image">
 				<div class="board-card-info">
 					<h3>Radbug 103</h3>
 					<p>Decathlon</p>
 				</div>
 			</article>
-			<article class="board-card">
+			<article class="board-card" tabindex="0" role="button" aria-expanded="false" data-description="Son shape en bois offre un bon compromis entre stabilité, solidité et maniabilité pour les premières vagues.">
 				<img src="images/planche-4.JPEG" alt="Planche de skimboard Radbug" class="board-card-image">
 				<div class="board-card-info">
 					<h3>Radbug Wave Wooden Skimboard 103 cm</h3>
 					<p>Decathlon</p>
 				</div>
 			</article>
-			<article class="board-card">
+			<article class="board-card" tabindex="0" role="button" aria-expanded="false" data-description="Une planche plus grande et réactive, adaptée aux pratiquants qui recherchent vitesse et précision dans les vagues.">
 				<img src="images/planche-5.JPG" alt="Planche de skimboard rouge Radbug" class="board-card-image">
 				<div class="board-card-info">
 					<h3>Eden Z115 Rouge</h3>
@@ -86,6 +86,19 @@
 		</div>
 	</section>
 </main>
+
+<div class="board-details" id="board-details" aria-hidden="true">
+	<div class="board-details-backdrop"></div>
+	<section class="board-details-panel" role="dialog" aria-modal="true" aria-labelledby="board-details-title">
+		<button class="board-details-close" type="button" aria-label="Fermer la description">
+			<i class="fa-solid fa-xmark" aria-hidden="true"></i>
+		</button>
+		<img class="board-details-image" id="board-details-image" src="" alt="">
+		<p class="board-details-brand" id="board-details-brand"></p>
+		<h2 id="board-details-title"></h2>
+		<p class="board-details-description" id="board-details-description"></p>
+	</section>
+</div>
 
 <script src="script.js"></script>
 </body>
