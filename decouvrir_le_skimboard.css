@@ -423,6 +423,13 @@ main {
     object-position: center center;
 }
 
+.accessory-image {
+    object-fit: cover;
+    object-position: center 52%;
+    transform: scale(1.25);
+    transform-origin: center center;
+}
+
 .discover-copy {
     position: static;
     grid-column: 1;
@@ -556,6 +563,10 @@ main {
     background: #f5f3ee;
     object-position: center;
     mix-blend-mode: multiply;
+}
+
+.accessory-card-image {
+    object-fit: contain;
 }
 
 .board-card-info {

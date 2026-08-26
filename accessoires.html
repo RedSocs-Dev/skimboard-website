@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="decouvrir_le_skimboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Accessoires | Blue Glide</title>
+</head>
+<body>
+
+<nav>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="logo">
+        <a href="index.html">Blue Glide</a>
+    </div>
+
+    <ul class="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="decouvrir_le_skimboard.html">Découvrir</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" aria-expanded="false">Spots ▾</a>
+            <ul class="sous-menu">
+                <li><a href="spot-en-france.html">France</a></li>
+                <li><a href="spot-a-bali.html">Bali</a></li>
+                <li><a href="spot-a-hawai.html">Hawaï</a></li>
+            </ul>
+        </li>
+        <li><a href="planches.html">Planches</a></li>
+        <li><a href="accessoires.html">Accessoires</a></li>
+        <li><a href="location.html">Location</a></li>
+        <li><a href="cours.html">Cours</a></li>
+    </ul>
+
+    <ul class="menu-droite">
+        <li><a href="#"><i class="fa-regular fa-user"></i></a></li>
+    </ul>
+</nav>
+
+<main>
+    <section class="hero discover-hero" aria-labelledby="hero-title">
+        <div class="discover-image-frame">
+            <img src="images/image%20equipement.jpg" alt="Équipement de skimboard" class="image discover-image accessory-image">
+        </div>
+        <div class="hero-copy discover-copy">
+            <p class="hero-kicker">Équipement</p>
+            <h1 id="hero-title" class="page-title-animated">Accessoires</h1>
+            <p class="hero-text home-supporting-text">Prépare ta planche et améliore tes sessions !</p>
+        </div>
+    </section>
+
+    <section class="boards-section" aria-labelledby="accessories-title">
+        <h2 id="accessories-title">Notre sélection</h2>
+        <div class="boards-grid accessories-grid">
+            <article class="board-card" tabindex="0" role="button" aria-expanded="false" data-description="Un pad de traction qui améliore l'adhérence du pied arrière et apporte plus de contrôle pendant les figures.">
+                <img src="images/pad-skimboard.JPEG" alt="Pad de traction noir pour skimboard" class="board-card-image accessory-card-image">
+                <div class="board-card-info">
+                    <h3>Pad de traction</h3>
+                    <p>Wave Grip</p>
+                </div>
+            </article>
+            <article class="board-card" tabindex="0" role="button" aria-expanded="false" data-description="Une wax pensée pour les eaux chaudes. Elle augmente l'adhérence sur la planche et limite les glissades pendant la session.">
+                <img src="images/wax1.JPEG" alt="Pain de wax Sex Wax pour eau chaude" class="board-card-image accessory-card-image">
+                <div class="board-card-info">
+                    <h3>Sex Wax Quick Humps</h3>
+                    <p>Mr. Zogs</p>
+                </div>
+            </article>
+            <article class="board-card" tabindex="0" role="button" aria-expanded="false" data-description="Une wax polyvalente facile à appliquer, idéale pour conserver une bonne accroche sur la planche avant d'entrer dans l'eau.">
+                <img src="images/wax2.JPEG" alt="Pain de wax Sex Wax polyvalente" class="board-card-image accessory-card-image">
+                <div class="board-card-info">
+                    <h3>Sex Wax Dream Cream</h3>
+                    <p>Mr. Zogs</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+<div class="board-details" id="board-details" aria-hidden="true">
+    <div class="board-details-backdrop"></div>
+    <section class="board-details-panel" role="dialog" aria-modal="true" aria-labelledby="board-details-title">
+        <button class="board-details-close" type="button" aria-label="Fermer la description">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <img class="board-details-image" id="board-details-image" src="" alt="">
+        <p class="board-details-brand" id="board-details-brand"></p>
+        <h2 id="board-details-title"></h2>
+        <p class="board-details-description" id="board-details-description"></p>
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
