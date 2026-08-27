@@ -649,7 +649,72 @@ main {
 
 .spot-content .home-section-kicker,
 .mapbox-section .home-section-kicker {
-    margin-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 16px;
+    padding: 7px 12px 6px;
+    border: 1px solid rgba(216, 162, 74, .55);
+    border-radius: 999px;
+    background: rgba(216, 162, 74, .12);
+    color: #d8a24a;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.spot-content .home-section-kicker::before,
+.mapbox-section .home-section-kicker::before,
+.spot-list .home-section-kicker::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #d8a24a;
+    box-shadow: 0 0 0 4px rgba(216, 162, 74, .15);
+}
+
+.spot-list .home-section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 7px 12px 6px;
+    border-radius: 999px;
+    background: #174653;
+    color: #f0c778;
+    font: 700 12px/1 'Oswald', sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+/* Même signature graphique pour les rubriques Équipement et Planches */
+.boards-section > .home-section-kicker,
+.guide-section .home-section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 16px;
+    padding: 7px 12px 6px;
+    border: 1px solid rgba(216, 162, 74, .55);
+    border-radius: 999px;
+    background: rgba(216, 162, 74, .12);
+    color: #b47b2d;
+    font: 700 12px/1 'Oswald', sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+.boards-section > .home-section-kicker::before,
+.guide-section .home-section-kicker::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #d8a24a;
+    box-shadow: 0 0 0 4px rgba(216, 162, 74, .15);
 }
 
 .spot-highlights {
@@ -677,6 +742,27 @@ main {
     color: #f0c778 !important;
 }
 
+/* Spot cards — grille éditoriale inspirée de la page Bali */
+.spot-list {
+    margin: 0 clamp(28px, 9vw, 140px) 32px;
+    padding: 12px 0 28px;
+}
+.spot-list-heading { max-width: 680px; margin-bottom: 26px; }
+.spot-list-heading h2 { margin: 6px 0 10px; font-family: 'Oswald', sans-serif; font-size: clamp(30px, 3vw, 44px); line-height: 1; color: #174653; }
+.spot-list-heading p:last-child { color: #526166; font-family: 'Oswald', sans-serif; font-size: 17px; }
+.spot-cards { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 22px; }
+.spot-card { overflow: hidden; background: #fff; border: 1px solid #e5e0d7; border-radius: 18px; box-shadow: 0 12px 28px rgba(23,70,83,.1); transition: transform .25s ease, box-shadow .25s ease; }
+.spot-card:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(23,70,83,.18); }
+.spot-card img { display:block; width:100%; height:190px; object-fit:cover; }
+.spot-card-body { padding: 20px 20px 22px; }
+.spot-card-kicker { margin:0 0 7px; color:#b47b2d; font: 700 12px/1.2 'Oswald',sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+.spot-card h3 { margin:0 0 8px; color:#174653; font: 700 25px/1 'Oswald',sans-serif; }
+.spot-card p { margin:0; color:#526166; font: 16px/1.5 'Oswald',sans-serif; }
+.spot-card-meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:15px; }
+.spot-card-meta span { padding:6px 9px; border-radius:99px; background:#edf4f2; color:#174653; font: 700 12px/1 'Oswald',sans-serif; }
+@media (max-width: 850px) { .spot-cards { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .spot-cards { grid-template-columns: 1fr; } .spot-list { margin-inline:20px; } }
+
 .mapbox-section {
     background: #ffffff;
     border: 1px solid #e1ddd4;
@@ -697,9 +783,20 @@ main {
     font-size: 20px;
 }
 
-.mapbox-placeholder i {
-    color: #d8a24a;
-    font-size: 38px;
+#map {
+    min-height: 300px;
+}
+.spot-popup { min-width: 190px; font-family: 'Oswald', sans-serif; }
+.spot-popup img { display:block; width:100%; height:90px; margin:-2px 0 9px; border-radius:7px; object-fit:cover; }
+.spot-popup strong { display:block; color:#174653; font-size:18px; }
+.spot-popup p { margin:4px 0; color:#4f5e61; font-size:14px; line-height:1.35; }
+.spot-popup small { color:#8f6d38; font-size:11px; line-height:1.25; }
+
+#map {
+    width: 100%;
+    min-height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .boards-grid {

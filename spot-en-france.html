@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Découvrez les meilleurs spots de skimboard en France, les conditions à privilégier et les conseils pour préparer votre session.">
     <link rel="stylesheet" href="decouvrir_le_skimboard.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <title>Skimboard en France : meilleurs spots et conseils</title>
 </head>
 <body>
@@ -25,8 +25,9 @@
         <div class="hero-copy discover-copy"><p class="hero-kicker">Spots de skimboard</p><h1 id="hero-title" class="page-title-animated">La France</h1><p class="hero-text">Des plages atlantiques idéales pour glisser.</p></div>
     </section>
     <section class="spot-content" aria-labelledby="france-title"><div><p class="home-section-kicker">Guide local</p><h2 id="france-title">Où faire du skimboard en France ?</h2><p>La côte atlantique offre de longues plages et des bancs de sable adaptés au skimboard. Vérifie les marées, la météo et les zones de baignade avant chaque session.</p></div><div class="spot-highlights"><h3>Spots à découvrir</h3><p>Hossegor, Lacanau, Biscarrosse et la côte basque.</p><p class="spot-advice">Meilleur choix : une plage large à marée descendante.</p></div></section>
-    <section class="mapbox-section" aria-labelledby="france-map-title"><div><p class="home-section-kicker">Carte interactive</p><h2 id="france-map-title">Spots de skimboard en France</h2><p>La carte Mapbox sera centrée sur la côte atlantique.</p></div><div class="mapbox-placeholder" data-mapbox-center="-1.15,44.1"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i><span>Carte Mapbox</span></div></section>
+    <section class="mapbox-section" aria-labelledby="france-map-title"><div><p class="home-section-kicker">Carte interactive</p><h2 id="france-map-title">Spots de skimboard en France</h2><p>Explore les spots repérés sur la carte.</p></div><div id="map"></div></section>
+<section class="spot-list" aria-labelledby="spots-title"><div class="spot-list-heading"><p class="home-section-kicker">Carnet de voyage</p><h2 id="spots-title">Les spots à retenir</h2><p>Repère le bon terrain selon ton niveau, la marée et l’état du shorebreak.</p></div><div class="spot-cards"><article class="spot-card"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Grande plage de sable"><div class="spot-card-body"><p class="spot-card-kicker">Flatland • sable humide</p><h3>La plage ouverte</h3><p>Une zone régulière et peu profonde pour apprendre le départ, les glissés et les premiers virages.</p><div class="spot-card-meta"><span>Débutant</span><span>Sable plat</span></div></div></article><article class="spot-card"><img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=900&q=80" alt="Vagues proches du rivage"><div class="spot-card-body"><p class="spot-card-kicker">Shorebreak • marée basse</p><h3>Le banc de sable</h3><p>Quand la houle arrive près du bord, les vagues deviennent parfaites pour les figures — réservées aux pratiquants à l’aise.</p><div class="spot-card-meta"><span>Intermédiaire</span><span>Petite houle</span></div></div></article><article class="spot-card"><img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=900&q=80" alt="Côte et océan"><div class="spot-card-body"><p class="spot-card-kicker">Puissant • conditions engagées</p><h3>Le spot expert</h3><p>Un shorebreak creux et rapide pour les skimmers confirmés. Vérifie les courants et les consignes locales.</p><div class="spot-card-meta"><span>Expert</span><span>Vagues</span></div></div></article></div></section>
 </main>
-<script src="script.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="script.js"></script>
 </body>
 </html>
