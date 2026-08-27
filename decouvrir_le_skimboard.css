@@ -742,6 +742,214 @@ main {
     color: #f0c778 !important;
 }
 
+/* Appel à l’action commun en bas de chaque page */
+.shop-cta {
+    margin: 0 clamp(28px, 9vw, 140px) 56px;
+    padding: clamp(34px, 5vw, 58px);
+    border-radius: 18px;
+    background: #e7efeb;
+    text-align: center;
+}
+
+.shop-cta-kicker {
+    margin-bottom: 12px;
+    color: #b47b2d;
+    font: 700 12px/1 'Oswald', sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.shop-cta h2 {
+    margin-bottom: 12px;
+    color: #174653;
+    font: 700 clamp(30px, 3vw, 44px)/1 'Oswald', sans-serif;
+}
+
+.shop-cta > p:not(.shop-cta-kicker) {
+    max-width: 580px;
+    margin: 0 auto 24px;
+    color: #526166;
+    font: 17px/1.5 'Oswald', sans-serif;
+}
+
+.shop-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    background: #174653;
+    color: #ffffff;
+    font: 700 16px/1 'Oswald', sans-serif;
+    transition: transform .2s ease, background-color .2s ease;
+}
+
+.shop-cta-button:hover,
+.shop-cta-button:focus-visible {
+    background: #b47b2d;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.shop-cta-button:focus-visible {
+    outline: 3px solid #174653;
+    outline-offset: 3px;
+}
+
+/* Page magasin : une mise en page plus éditoriale que les pages catalogue */
+.store-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, .9fr);
+    min-height: min(620px, calc(100vh - 94px));
+    background: #174653;
+    color: #ffffff;
+}
+
+.store-hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 720px;
+    padding: clamp(52px, 9vw, 140px);
+}
+
+.store-eyebrow {
+    margin-bottom: 16px;
+    color: #e7b75c;
+    font: 700 12px/1 'Oswald', sans-serif;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.store-hero h1 {
+    margin-bottom: 22px;
+    color: #ffffff;
+    font: 700 clamp(48px, 7vw, 90px)/.9 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+.store-hero-copy > p:last-child {
+    max-width: 510px;
+    color: #dcebed;
+    font: 20px/1.5 'Oswald', sans-serif;
+}
+
+.store-hero img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+}
+
+.store-notice {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 24px;
+    max-width: 920px;
+    margin: clamp(48px, 8vw, 100px) auto;
+    padding: 0 28px;
+}
+
+.store-notice-icon {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #e7b75c;
+    color: #174653;
+    font-size: 23px;
+}
+
+.store-notice h2,
+.store-services h2 {
+    margin-bottom: 12px;
+    color: #174653;
+    font: 700 clamp(32px, 4vw, 52px)/1 'Oswald', sans-serif;
+}
+
+.store-notice > div:last-child > p:last-child {
+    max-width: 720px;
+    color: #526166;
+    font: 18px/1.55 'Oswald', sans-serif;
+}
+
+.store-services {
+    padding: clamp(48px, 7vw, 96px) clamp(28px, 9vw, 140px);
+    background: #e7efeb;
+}
+
+.store-services-heading {
+    max-width: 640px;
+    margin-bottom: 32px;
+}
+
+.store-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.store-services-grid article {
+    padding: 30px;
+    background: #ffffff;
+    border-top: 4px solid #e7b75c;
+}
+
+.store-services-grid i {
+    margin-bottom: 22px;
+    color: #b47b2d;
+    font-size: 25px;
+}
+
+.store-services-grid h3 {
+    margin-bottom: 9px;
+    color: #174653;
+    font: 700 28px/1 'Oswald', sans-serif;
+}
+
+.store-services-grid p {
+    color: #526166;
+    font: 17px/1.5 'Oswald', sans-serif;
+}
+
+@media (max-width: 760px) {
+    .store-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .store-hero-copy {
+        min-height: 440px;
+        padding: 54px 28px;
+    }
+
+    .store-hero img {
+        min-height: 280px;
+        max-height: 380px;
+    }
+
+    .store-services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .store-notice {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin: 52px auto;
+        padding: 0 20px;
+    }
+
+    .store-services {
+        padding: 48px 20px;
+    }
+
+    .store-services-grid article {
+        padding: 26px 22px;
+    }
+}
+
 /* Spot cards — grille éditoriale inspirée de la page Bali */
 .spot-list {
     margin: 0 clamp(28px, 9vw, 140px) 32px;
@@ -762,6 +970,13 @@ main {
 .spot-card-meta span { padding:6px 9px; border-radius:99px; background:#edf4f2; color:#174653; font: 700 12px/1 'Oswald',sans-serif; }
 @media (max-width: 850px) { .spot-cards { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .spot-cards { grid-template-columns: 1fr; } .spot-list { margin-inline:20px; } }
+
+@media (max-width: 560px) {
+    .shop-cta {
+        margin: 0 20px 42px;
+        padding: 34px 22px;
+    }
+}
 
 .mapbox-section {
     background: #ffffff;
