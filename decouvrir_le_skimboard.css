@@ -1005,6 +1005,10 @@ main {
 .spot-popup img { display:block; width:100%; height:90px; margin:-2px 0 9px; border-radius:7px; object-fit:cover; }
 .spot-popup strong { display:block; color:#174653; font-size:18px; }
 .spot-popup p { margin:4px 0; color:#4f5e61; font-size:14px; line-height:1.35; }
+.spot-popup-map-link { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; box-sizing:border-box; margin:12px 0 10px; padding:10px 12px; border:1px solid #d7e2e5; border-radius:9px; background:#ffffff; box-shadow:0 3px 10px rgba(23,70,83,.12); color:#174653; font-size:12px; font-weight:700; line-height:1.2; text-decoration:none; transition:transform .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.spot-popup-map-link::before { content:"↗"; display:grid; place-items:center; width:19px; height:19px; border-radius:50%; background:#d8a24a; color:#174653; font-size:14px; font-weight:800; }
+.spot-popup-map-link:hover, .spot-popup-map-link:focus-visible { border-color:#174653; background:#eef6f7; box-shadow:0 5px 14px rgba(23,70,83,.2); color:#174653; transform:translateY(-1px); }
+.spot-popup-map-link:focus-visible { outline:3px solid #d8a24a; outline-offset:2px; }
 .spot-popup small { color:#8f6d38; font-size:11px; line-height:1.25; }
 
 #map {
