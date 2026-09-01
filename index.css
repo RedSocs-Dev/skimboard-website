@@ -411,7 +411,7 @@
 .site-footer-brand > a { color:#ffffff; font-family:'Oswald', sans-serif; font-size:32px; font-weight:700; letter-spacing:.04em; }
 .site-footer-brand p { max-width:290px; margin:12px 0 0; color:#b8ced1; line-height:1.65; }
 .site-footer h2 { margin:6px 0 16px; color:#e4b45a; font-size:12px; letter-spacing:.14em; text-transform:uppercase; }
-.site-footer-nav { display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
+nav.site-footer-nav { position:static; z-index:auto; display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
 .site-footer-social { display:flex; flex-wrap:wrap; gap:9px; }
 .site-footer-social a, .site-footer-dev > a { gap:8px; padding:10px 12px; border:1px solid rgba(219,233,234,.27); border-radius:9px; background:rgba(255,255,255,.06); }
 .site-footer-social a:hover, .site-footer-social a:focus-visible, .site-footer-dev > a:hover, .site-footer-dev > a:focus-visible { border-color:#e4b45a; background:rgba(228,180,90,.14); transform:translateY(-2px); }

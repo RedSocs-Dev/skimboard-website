@@ -24,7 +24,7 @@ a {
     list-style: none;
 }
 
-nav {
+nav:not(.site-footer-nav) {
     position: fixed;
     top: 0;
     left: 0;
@@ -39,6 +39,16 @@ nav {
     box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
     font-family: 'Oswald', sans-serif;
     font-size: 18px;
+}
+
+nav.site-footer-nav {
+    position: static;
+    z-index: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 button,

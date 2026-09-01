@@ -1,24 +1,36 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
-const menuIcon = menuToggle.querySelector("i");
+const menuIcon = menuToggle ? menuToggle.querySelector("i") : null;
 const dropdownToggle = document.querySelector(".dropdown-toggle");
 const dropdown = document.querySelector(".dropdown");
 const heroTitle = document.querySelector("#hero-title");
 const homeCopy = document.querySelector(".home-copy");
 
-menuToggle.addEventListener("click", () => {
-    const isOpen = menu.classList.toggle("active");
-    menuIcon.classList.toggle("fa-bars", !isOpen);
-    menuIcon.classList.toggle("fa-xmark", isOpen);
-    menuToggle.setAttribute("aria-expanded", isOpen);
-    menuToggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
-});
+if (menuToggle && menu && menuIcon) {
+    menu.classList.remove("active");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+    menuIcon.classList.remove("fa-xmark");
+    menuIcon.classList.add("fa-bars");
 
-dropdownToggle.addEventListener("click", (event) => {
-    event.preventDefault();
-    const isOpen = dropdown.classList.toggle("open");
-    dropdownToggle.setAttribute("aria-expanded", isOpen);
-});
+    menuToggle.addEventListener("click", () => {
+        const isOpen = menu.classList.toggle("active");
+        menuIcon.classList.toggle("fa-bars", !isOpen);
+        menuIcon.classList.toggle("fa-xmark", isOpen);
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
+    });
+}
+
+if (dropdownToggle && dropdown) {
+    dropdown.classList.remove("open");
+    dropdownToggle.setAttribute("aria-expanded", "false");
+    dropdownToggle.addEventListener("click", (event) => {
+        event.preventDefault();
+        const isOpen = dropdown.classList.toggle("open");
+        dropdownToggle.setAttribute("aria-expanded", isOpen);
+    });
+}
 
 if (heroTitle && homeCopy) {
     const titleObserver = new IntersectionObserver(([entry]) => {
